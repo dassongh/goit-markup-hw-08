@@ -1,17 +1,79 @@
 .header {
   position: relative;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ececec;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 21px;
+    padding-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 24px;
+    padding-bottom: 25px;
+  }
+}
+
+.header__container {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.header__list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    margin-left: 88px;
+  }
 }
 
 .header__mobile-menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 48px 83px 48px 40px;
+  @media screen and (max-width: 767px) {
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 48px 83px 48px 40px;
+    overflow-y: scroll;
+    z-index: 999;
 
-  background-color: $bgColor;
+    background-color: $bgColor;
+
+    @include animated(transform);
+
+    &--is-open {
+      transform: translateX(0);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.header__button-open {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  width: 40px;
+  height: 40px;
+  border: none;
+  margin-left: auto;
+
+  color: $secondaryTextColor;
+  background-color: transparent;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 
 .header__button-close {
@@ -28,6 +90,10 @@
 
   color: $secondaryTextColor;
   background-color: transparent;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 
 .header__link {
@@ -51,6 +117,31 @@
       color: $accent;
     }
   }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+
+    &--nav {
+      color: $secondaryTextColor;
+    }
+
+    &--current {
+      color: $accent;
+    }
+
+    &--current::after {
+      position: absolute;
+      top: 45px;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+
+      background-color: $accent;
+    }
+  }
 }
 
 .header__item {
@@ -61,12 +152,32 @@
       margin-bottom: 306px;
     }
   }
+
+  @media screen and (min-width: 768px) {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
 }
 
 .header__contacts {
   @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: column-reverse;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin-left: 84px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    align-items: center;
+    margin-left: 305px;
   }
 }
 
@@ -78,11 +189,35 @@
       margin-bottom: 64px;
     }
   }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    &:first-child {
+      margin-bottom: 10px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin: 0;
+
+    &:last-child {
+      margin-left: 30px;
+    }
+  }
 }
 
 .header__icon {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.header__contacts-icon {
   @media screen and (max-width: 767px) {
     display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-right: 8px;
   }
 }
 
@@ -114,4 +249,10 @@
   line-height: 1.22;
 
   color: $accent;
+}
+
+.header__dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

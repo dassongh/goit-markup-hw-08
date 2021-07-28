@@ -1,0 +1,38 @@
+.work {
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+}
+
+.work__title {
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.work__cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+
+.work__card {
+  position: relative;
+  margin: 15px;
+}
+
+.work__thumb {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.work__heading {
+  padding-top: 27px;
+  padding-bottom: 27px;
+  margin: 0;
+  text-align: center;
+
+  color: $additionalTextColor;
+}
