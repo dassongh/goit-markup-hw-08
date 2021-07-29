@@ -75,14 +75,10 @@
 
 .team__social-links {
   display: flex;
-  justify-content: space-between;
-  padding-right: 27.1111%;
-  padding-left: 27.1111%;
+  justify-content: center;
   padding-bottom: 24px;
 
   @media screen and (min-width: 1200px) {
-    padding-right: 32px;
-    padding-left: 32px;
     padding-bottom: 30px;
   }
 }
