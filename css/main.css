@@ -1096,7 +1096,12 @@ body {
 
 .clients__card-item {
   margin: 15px;
-  width: calc((100% - 60px) / 2);
+}
+
+@media screen and (max-width: 767px) {
+  .clients__card-item {
+    width: calc((100% - 60px) / 2);
+  }
 }
 
 .footer {
