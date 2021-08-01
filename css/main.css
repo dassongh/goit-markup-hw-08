@@ -1060,7 +1060,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 210px;
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
@@ -1097,6 +1096,7 @@ body {
 
 .clients__card-item {
   margin: 15px;
+  width: calc((100% - 60px) / 2);
 }
 
 .footer {
