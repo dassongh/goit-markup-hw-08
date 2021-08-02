@@ -38,7 +38,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    padding: 48px 83px 48px 40px;
+    padding: 48px 0 48px 40px;
     overflow-y: scroll;
     z-index: 999;
 
@@ -241,6 +241,11 @@
   &:last-child {
     padding-right: 0;
     border-right: none;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding-right: 5px;
+    padding-left: 5px;
   }
 }
 

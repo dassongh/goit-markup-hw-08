@@ -169,15 +169,20 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 1199px) {
+    justify-content: space-between;
+  }
 }
 
 .modal__check-label {
-  margin-left: 7px;
+  margin-left: 20px;
 
   font-size: 12px;
   line-height: 1.16;
 
   @media screen and (min-width: 1200px) {
+    margin-left: 7px;
     font-style: 14px;
     line-height: 1.71;
   }
@@ -209,6 +214,10 @@
 
   .modal__checkbox:checked + & {
     background-image: url(../images/icon-checked.svg);
+  }
+
+  @media screen and (max-width: 1199px) {
+    position: absolute;
   }
 }
 
